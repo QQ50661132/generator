@@ -1,0 +1,23 @@
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@192.168.88.83:1521:ZLHJ
+    username: username
+    password: password
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 20
+      connection-test-query: SELECT 1 from dual
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      connection-timeout: 30000
+      idle-timeout: 30000
+
+# Logger Config
+#loggin:
+#  level:
+#    com.baomidou.mybatisplus.samples.quickstart: debug
+server:
+  port: 8080
+  servlet:
+    context-path: /generator
