@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("onem.dsj.generator.*.mapper")
+@MapperScan("onem.dsj.generator.sys.mapper,onem.dsj.generator.*.*.mapper")
 public class GeneratorApplication {
 
 	public static void main(String[] args) {

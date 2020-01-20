@@ -1,7 +1,7 @@
 # DataSource Config
 spring:
   datasource:
-    driver-class-name: oracle.jdbc.driver.OracleDriver
+    driver-class-name: oracle.jdbc.OracleDriver
     url: jdbc:oracle:thin:@192.168.88.83:1521:ZLHJ
     username: username
     password: password
@@ -9,7 +9,7 @@ spring:
       minimum-idle: 5
       maximum-pool-size: 20
       connection-test-query: SELECT 1 from dual
-      driver-class-name: oracle.jdbc.driver.OracleDriver
+      driver-class-name: oracle.jdbc.OracleDriver
       connection-timeout: 30000
       idle-timeout: 30000
 
@@ -21,3 +21,10 @@ server:
   port: 8080
   servlet:
     context-path: /generator
+
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: isDelete  #全局逻辑删除字段值 3.3.0开始支持，详情看下面。
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)

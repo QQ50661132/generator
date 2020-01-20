@@ -1,5 +1,7 @@
 package onem.dsj.generator.common.plat_form_result;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.http.HttpStatus;
@@ -11,18 +13,23 @@ import org.springframework.http.HttpStatus;
  */
 @Data
 @Builder
+@ApiModel("统一格式的返回值")
 public class PlatformResult implements Result {
     /**
      * 状态码
      */
+    @ApiModelProperty(name = "状态码", value = "0为正常")
     private Integer code;
     /**
      * 响应提示语
      */
+    @ApiModelProperty(name = "提示信息")
     private String msg;
     /**
      * 响应数据结果
      */
+
+    @ApiModelProperty(name = "返回数据")
     private Object data;
 
 
